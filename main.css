@@ -1,0 +1,270 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Root Variables*/
+:root {
+    --primary: #5FB3B3;
+    --secondary: #F4C7AB;
+    --dark: #2F3E46;
+    --light: #F7F7F7;
+    --white: #ffffff;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+/*Utility Classes */
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--dark);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.btn:hover {
+  background-color: #1e40af;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.btn-outline:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+
+/*Header*/
+.header {
+    top: 0;
+    display: flex;
+    justify-content: space-between; /* Puts logo on left, links on right */
+    align-items: center;     /* Vertically centers logo and nav */
+    height: 150px;               /* 👈 important */
+    background-color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    position: sticky;        /* Sticks to top on scroll */
+    top: 0;
+    z-index: 1000;          /* Ensures it stays above other content */
+    padding: 10px 50px;      /* Adjusts overall header padding */
+}
+
+/* Logo styling */
+.logo img {
+  height: 65px;
+  width: auto;
+  margin-right: 40px; 
+  border-radius: 100%;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+  display: block;
+}
+/* Hover effect */
+.logo:hover {
+  transform: scale(1.1);               /* Slightly enlarge logo */
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Adds soft shadow */
+  cursor: pointer;                     /* Makes it feel clickable */
+}
+
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+/*Navigation*/
+.nav-links {
+  list-style: none;        /* remove bullets */
+  display: flex;           /* make horizontal */
+  gap: 30px;               /* spacing between items */
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li a {
+  padding: 10px 5px;      /* Extra clickable area for comfort */
+  color: var(--white);           /* Default link color */
+  text-decoration: none;           
+  display: inline-block;           
+  position: relative;              /* Needed for ::after positioning */
+  transition: color 0.3s ease, transform 0.3s ease; 
+  transform-origin: left center;  /* Smooth scaling */
+}
+
+.nav-links li a::after {
+  content: "";                     /* Empty content for the underline */
+  position: absolute;
+  left: 0;
+  bottom: -3px;                    /* Slightly below text */
+  width: 0%;                        /* Start with no width */
+  height: 2px;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;     /* Animate the width */
+}
+
+.nav-links li a:hover {
+  color: var(--secondary);         /* Color change */
+  transform: scale(1.05);          /* Slightly enlarge */
+}
+
+.nav-links li a:hover::after {
+  width: 100%;                      /* Expand underline fully on hover */
+}
+
+/* Active link styling */
+.nav-links li a.active {
+  color: var(--secondary);
+}
+
+.nav-links li a.active::after {
+  width: 100%;                      /* Underline for active link */
+}
+
+/* STYLING THE HERO SECTION */
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 90px;
+}
+
+/* Home Content header */
+.home-content h1{
+    font-size: 40px;
+    color: #2F3E46;
+    margin-bottom: 20px;
+}
+
+/* Home Content paragraph */
+.home-content p{
+    font-size: 20px;
+    color: #2F3E46;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/*Home content buttons*/
+.home-content .btn{
+    font-size: 18px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/*About Section*/
+.about-content h2{
+  margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+.about-content li{
+    margin: auto;
+    text-align: center;
+    color: #2F3E46;
+    display: block;
+    list-style-type: disc;
+    line-height: 2;
+    font-size: 18px;
+}
+
+/*  Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 20px 0 20px;
+    margin-top: 60px;
+}
+
+/* Main footer content */
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* Social icons */
+.socials {
+    list-style: none;          /* remove bu*llets */
+    display: flex;             /* make horizontal */
+    justify-content: center;   /* center the icons */
+    gap: 20px;                 /* spacing between icons */
+    margin-bottom: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8;
+}
+.about-content ul {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-content img {
+    height: 50px;
+    width: auto;
+    border-radius: 100%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-content img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    cursor: pointer;
+}
+
+.footer-bottom p {
+    margin-top: 10px;
+    color: wheat;
+}
+

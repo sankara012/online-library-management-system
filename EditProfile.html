@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="EditProfile.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.jpg" alt="Online Library Logo"/></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="page-header">
+        <h1>Edit Profile </h1>
+        <p> Update your personal information</p>
+    </div>
+    <main class="profile-edit">
+        <section class="card container">
+                <div class="profile-avatar-edit">
+                    <a href="#" class="profileImg"><img src="assets/images/profile.jpg" alt="Profile Image"/></a>
+                    <button type="button" class="btn">Change Image</button>
+                </div>
+                <div class="edit-profile-page">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>  
+                        <div class="form-actions">
+                            <button type="submit" class="btn">Save Changes</button>
+                            <button type="button" class="btn btn-secondary">Cancel</button>
+                        </div>  
+                    </form>  
+                </div>
+        </section>
+
+        
+    </main>
+    <section class="settings">
+            <h2>Account Settings</h2>
+
+            <form class="password-form">
+                <div class="form-group">
+                    <label for="old-password">Old Password</label>
+                    <input type="password" id="old-password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+
+                <button type="submit" class="btn">Update Password</button>
+            </form>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <h3>Online Library System</h3>
+            <p>Your gateway to a world of knowledge and literature.</p>
+            <ul class="socials">
+                <li><a href="#"><img src="assets/images/instagram.jpg" alt="instagram"/></a></li>
+                <li><a href="#"><img src="assets/images/linkedin.png" alt="linkedin"/></a></li> 
+                <li><a href="#"><img src="assets/images/facebook.png" alt="facebook"/></a></li>
+                <li><a href="#"><img src="assets/images/twitter.png" alt="twitter"/></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Online Library System. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
