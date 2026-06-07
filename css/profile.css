@@ -288,7 +288,7 @@ body {
 
 .account-info h1{
   margin-bottom: 30px;
-    color: var(--primary);
+  color: var(--primary);
 }
 .account-info p{
   padding: 20px;

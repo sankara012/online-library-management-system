@@ -39,7 +39,7 @@ body {
     display: flex;
     justify-content: space-between; /* Puts logo on left, links on right */
     align-items: center;     /* Vertically centers logo and nav */
-    height: 150px;               /* 👈 important */
+    height: 150px;               /*important for the height ajustment*/
     background-color: var(--primary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     position: sticky;        /* Sticks to top on scroll */
@@ -52,7 +52,7 @@ body {
 
 /* -------------Logo styling------------ */
 .logo img {
-  height: 70px;
+  height: 80px;
   width: auto;
   margin-right: 40px; 
   border-radius: 100%;
@@ -341,7 +341,7 @@ footer {
 
 /* Social icons */
 .socials {
-    list-style: none;          /* remove bu*llets */
+    list-style: none;          /* remove bullets */
     display: flex;             /* make horizontal */
     justify-content: center;   /* center the icons */
     gap: 20px;                 /* spacing between icons */
@@ -354,6 +354,7 @@ footer {
     opacity: 0.8;
 }
 .about-content ul {
+
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -401,7 +402,8 @@ footer {
 }
 
 /* Smooth scrolling for anchor links */
-html {
+html
+{
     scroll-behavior: smooth;
 }
 
