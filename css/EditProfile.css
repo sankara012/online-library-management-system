@@ -212,6 +212,7 @@ input:focus {
   background-color: var(--primary);
 }
 
+/*
 .settings{
   background-color: var(--light);
   padding: 20px;

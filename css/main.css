@@ -48,6 +48,7 @@ body {
 }
 
 .btn:hover {
+  color: #ffffff;
   background-color: #1e40af;
 }
 
