@@ -40,6 +40,7 @@ body {
   justify-content: space-between;
   padding: 0 30px;
   background: rgba(15, 23, 42, 0.8);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -167,10 +168,17 @@ p {
   margin-bottom: 8px;
 }
 
-/* ACTIVITY LIST */
-.activity li {
+/* BORROWED BOOKS LIST */
+.borrowed-list li {
   margin-bottom: 10px;
+  color: var(--text);
+  list-style: none;
+}
+
+.borrowed-list li span {
   color: var(--muted);
+  font-size: 0.85em;
+  display: block;
 }
 
 /* LINKS */
@@ -208,7 +216,7 @@ a:hover {
 <!-- HEADER -->
 <div class="header">
   <h2>Dashboard</h2>
-  <p>Razak Sankara</p>
+  <p id="headerName">Loading...</p>
 </div>
 
 <div class="container">
@@ -218,9 +226,9 @@ a:hover {
     <ul>
         <li><a href="#">Overview</a></li>
         <li><a href="profile.html">Profile</a></li>
-        <li><a href="settings.html">Settings</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="logout.html">Logout</a></li>
+        <li><a href="edit-profile.html">Edit Profile</a></li>
+        <li><a href="#" id="logoutLink">Logout</a></li>
+        <li><a href="index.html">Home</a></li>
     </ul>
   </div>
 
@@ -231,9 +239,9 @@ a:hover {
 
       <!-- PROFILE CARD -->
       <div class="card profile-card">
-        <img src="assets/images/profile.jpg">
-        <h3>Sankara</h3>
-        <p>Frontend Developer</p>
+        <img src="assets/images/profile.jpg" alt="User profile picture">
+        <h3 id="profileCardName">Loading...</h3>
+        <p>Library Member</p>
         <a href="profile.html" class="btn">Back to Profile</a>
       </div>
 
@@ -242,31 +250,13 @@ a:hover {
 
         <div class="card">
           <h2>Personal Info</h2>
-          <p>Email: sankara@email.com</p>
-          <p>Phone: +123456789</p>
-          <p>Location: India</p>
+          <p>Email: <span id="dashboardEmail">Loading...</span></p>
         </div>
 
         <div class="card">
-          <h2>Account Info</h2>
-          <p>Plan: Pro</p>
-          <p>Status: Active</p>
-          <p>Joined: 2024</p>
-        </div>
-
-        <div class="card">
-          <h2>Preferences</h2>
-          <p>Theme: Dark</p>
-          <p>Language: English</p>
-          <p>Preferred Genres:Science Fiction, Mystery</p>
-        </div>
-
-        <div class="card">
-          <h2>Activity</h2>
-          <ul class="activity">
-            <li>Logged in</li>
-            <li>Updated profile</li>
-            <li>Changed password</li>
+          <h2>My Borrowed Books</h2>
+          <ul class="borrowed-list" id="borrowedList">
+            <!-- Filled in by JavaScript -->
           </ul>
         </div>
 
@@ -278,5 +268,7 @@ a:hover {
 
 </div>
 
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
 </body>
 </html>

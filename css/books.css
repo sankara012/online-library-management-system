@@ -233,11 +233,11 @@ body {
 
 .book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     margin-bottom: 40px;
+    justify-content: center;
 }
-
 .book-card {
     background-color: var(--light);
     border-radius: 8px;
@@ -254,8 +254,10 @@ body {
     cursor: pointer;
 }
 .book-card img {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    max-width: 160px;
+    height: 210px;
+    object-fit: cover;
     border-radius: 4px;
     margin-bottom: 10px;
 }   
@@ -407,4 +409,41 @@ html
     scroll-behavior: smooth;
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 350px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-box img {
+    width: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
 /* ===== End of books.css ===== */

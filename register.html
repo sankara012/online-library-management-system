@@ -17,7 +17,7 @@
     <main class="register-container">
         <h1>Create Your Account</h1>
 
-        <form action="welcome.html" method="post">
+        <form id="registerForm">
 
             <div class="form-group">
                 <label for="fullname">Full Name</label>
@@ -50,6 +50,8 @@
                 <label for="terms">I accept the Terms and Conditions</label>
             </div>
 
+            <p id="registerError" class="error-message"></p>
+
             <button type="submit" class="btn">Create Account</button>
 
         </form>
@@ -68,6 +70,8 @@
             passwordInput.type = toggle.checked ? "text" : "password";
         });
     </script>
+
+    <script src="js/register.js"></script>
 
 </body>
 </html>

@@ -234,3 +234,5 @@ footer {
     margin-top: 10px;
     color: wheat;
 } 
+
+.error-message { color: #d93025; margin-top: 8px; font-size: 0.9rem; }

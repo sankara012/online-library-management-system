@@ -20,7 +20,8 @@
                 <ul class="nav-links">
                 <li><a href="books.html#books">Books</a></li>
                     <li><a href="profile.html">Profile</a></li>
-                    <li><a href="logout.html">Logout</a></li>
+                    <li><a href="#" id="logoutLink">Log Out</a></li>
+                    <li><a href="settings.html">Dashboard</a></li>
                 </ul>
             </nav>
         </div>
@@ -52,12 +53,13 @@
         <aside class="categories-section">
             <h2>Book Categories</h2>
             <ul class="categories-list">
-                <li><a href="#">Fiction</a></li>
-                <li><a href="#">Non-Fiction</a></li>
-                <li><a href="#">Science</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Biography</a></li>
-                <li><a href="#">Children's Books</a></li>
+                <li><a href="#" class="category-link" data-category="all">All</a></li>
+                <li><a href="#" class="category-link" data-category="fiction">Fiction</a></li>
+                <li><a href="#" class="category-link" data-category="non-fiction">Non-Fiction</a></li>
+                <li><a href="#" class="category-link" data-category="science">Science</a></li>
+                <li><a href="#" class="category-link" data-category="history">History</a></li>
+                <li><a href="#" class="category-link" data-category="biography">Biography</a></li>
+                <li><a href="#" class="category-link" data-category="children">Children's Books</a></li>
             </ul>
         </aside>
 
@@ -67,95 +69,107 @@
 
             <div class="book-list">
 
-                <article class="book-card">
+                <article class="book-card" data-category="fiction">
                     <img src="assets/images/book1.jpg" alt="My Best Stories">
                     <h3>My Best Stories</h3>
                     <p>Alice Munro</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="fiction">
                     <img src="assets/images/book2.jpg" alt="The Road">
                     <h3>The Road</h3>
                     <p>Cormac McCarthy</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="science">
                     <img src="assets/images/book3.jpg" alt="The Theory of Everything">
                     <h3>The Theory of Everything</h3>
                     <p>Stephen Hawking</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="children">
                     <img src="assets/images/book4.jpg" alt="Harry Potter">
                     <h3>Harry Potter</h3>
                     <p>J.K. Rowling</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="fiction">
                     <img src="assets/images/book5.jpg" alt="Out There">
                     <h3>Out There</h3>
                     <p>Tom Sullivan</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="non-fiction">
                     <img src="assets/images/book6.jpg" alt="The Great Gatsby">
                     <h3>The Great Gatsby</h3>
                     <p>F. Scott Fitzgerald</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="fiction">
                     <img src="assets/images/book7.jpg" alt="1984">
                     <h3>1984</h3>
                     <p>George Orwell</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="non-fiction">
                     <img src="assets/images/book8.jpg" alt="To Kill a Mockingbird">
                     <h3>To Kill a Mockingbird</h3>
                     <p>Harper Lee</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="science">
                     <img src="assets/images/book9.jpg" alt="A Brief History of Time">
                     <h3>A Brief History of Time</h3>
                     <p>Stephen Hawking</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
 
-                <article class="book-card">
+                <article class="book-card" data-category="fiction">
                     <img src="assets/images/book10.jpg" alt="The Catcher in the Rye">
                     <h3>The Catcher in the Rye</h3>
                     <p>J.D. Salinger</p>
-                    <button class="btn">View Details</button>
-                    <button class="btn">Borrow</button>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
+                </article>     
+                <article class ="book-card" data-category="History">
+                    <img src="assets/images/book11.jpg" alt="African Literature">
+                    <h3>African Literature</h3>
+                    <p>Safoura Salami-Boukari</p>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
+                </article> 
+                <article class ="book-card" data-category="History">
+                    <img src="assets/images/book12.jpg" alt="Tribal Scars">
+                    <h3>Tribal Scars</h3>
+                    <p>Ousmane Sembène</p>
+                    <button class="btn details-btn">View Details</button>
+                    <button class="btn borrow-btn">Borrow</button>
                 </article>
             </div>
         </section>
-        <div class="pagination">
-            <a href="#">&laquo; Previous</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">Next &raquo;</a>
+        <div class="pagination" id="pagination">
+            <a href="#" id="prevPage">&laquo; Previous</a>
+            <a href="#" class="page-link" data-page="1">1</a>
+            <a href="#" class="page-link" data-page="2">2</a>
+            <a href="#" class="page-link" data-page="3">3</a>     
+            <a href="#" id="nextPage">Next &raquo;</a>
         </div>
     </main>
     <footer>
@@ -173,5 +187,18 @@
             <p>&copy; 2026 Online Library System. All rights reserved.</p>
         </div>
     </footer>
+    <!-- Book Details Modal -->
+    <div id="bookModal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <button id="closeModal" class="modal-close">&times;</button>
+            <img id="modalImage" src="" alt="">
+            <h2 id="modalTitle"></h2>
+            <p id="modalAuthor"></p>
+            <p id="modalCategory"></p>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/books.js"></script>
+
 </body>
 </html>
