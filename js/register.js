@@ -35,7 +35,7 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
     }
 
     // Save new user
-    users.push({ fullname, email, password });
+    users.push({ fullname, email, password, joinedDate: new Date().toLocaleDateString() });
     localStorage.setItem("users", JSON.stringify(users));
 
     errorBox.style.color = "green";

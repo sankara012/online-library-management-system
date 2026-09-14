@@ -1,5 +1,6 @@
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+// ===== BORROW =====
 const borrowButtons = document.querySelectorAll(".borrow-btn");
 
 borrowButtons.forEach((button) => {
@@ -10,16 +11,13 @@ borrowButtons.forEach((button) => {
             return;
         }
 
-        // Get the book title from the same card as this button
         const card = button.closest(".book-card");
         const title = card.querySelector("h3").textContent;
-        const author = card.querySelector("p").textContent;
+        const author = card.querySelector(".card-front p").textContent;
 
-        // Load existing borrowed books for this user (or start fresh)
         const borrowedBooks = JSON.parse(localStorage.getItem("borrowedBooks")) || {};
         const userBooks = borrowedBooks[currentUser.email] || [];
 
-        // Avoid borrowing the same book twice
         const alreadyBorrowed = userBooks.some(book => book.title === title);
         if (alreadyBorrowed) {
             alert("You've already borrowed this book.");
@@ -34,7 +32,58 @@ borrowButtons.forEach((button) => {
     });
 });
 
-// SEARCH
+// ===== VIEW DETAILS MODAL (triggered by clicking the book cover image) =====
+const modal = document.getElementById("bookModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalAuthor = document.getElementById("modalAuthor");
+const modalCategory = document.getElementById("modalCategory");
+const closeModalBtn = document.getElementById("closeModal");
+
+document.querySelectorAll(".card-front img").forEach((img) => {
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => {
+        const card = img.closest(".book-card");
+
+        const title = card.querySelector("h3").textContent;
+        const author = card.querySelector(".card-front p").textContent;
+        const category = card.dataset.category;
+
+        modalImage.src = img.src;
+        modalTitle.textContent = title;
+        modalAuthor.textContent = `by ${author}`;
+        modalCategory.textContent = `Category: ${category}`;
+
+        modal.style.display = "flex";
+    });
+});
+
+closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+// ===== CARD FLIP (triggered by "View Details" button) =====
+document.querySelectorAll(".details-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+        const card = button.closest(".book-card");
+        card.classList.add("flipped");
+    });
+});
+
+document.querySelectorAll(".flip-back-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+        const card = button.closest(".book-card");
+        card.classList.remove("flipped");
+    });
+});
+
+// ===== SEARCH (title, author, genre) =====
 const searchForm = document.querySelector(".search-form");
 const searchInput = document.getElementById("search");
 const bookCards = document.querySelectorAll(".book-card");
@@ -46,7 +95,7 @@ searchForm.addEventListener("submit", (e) => {
 
     bookCards.forEach((card) => {
         const title = card.querySelector("h3").textContent.toLowerCase();
-        const author = card.querySelector("p").textContent.toLowerCase();
+        const author = card.querySelector(".card-front p").textContent.toLowerCase();
         const category = card.dataset.category.toLowerCase();
 
         const matches = title.includes(query) || author.includes(query) || category.includes(query);
@@ -54,7 +103,7 @@ searchForm.addEventListener("submit", (e) => {
     });
 });
 
-// CATEGORY FILTER
+// ===== CATEGORY FILTER =====
 const categoryLinks = document.querySelectorAll(".category-link");
 
 categoryLinks.forEach((link) => {
@@ -70,45 +119,7 @@ categoryLinks.forEach((link) => {
     });
 });
 
-// VIEW DETAILS MODAL
-const detailButtons = document.querySelectorAll(".details-btn");
-const modal = document.getElementById("bookModal");
-const modalImage = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalAuthor = document.getElementById("modalAuthor");
-const modalCategory = document.getElementById("modalCategory");
-const closeModalBtn = document.getElementById("closeModal");
-
-detailButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        const card = button.closest(".book-card");
-
-        const title = card.querySelector("h3").textContent;
-        const author = card.querySelector("p").textContent;
-        const category = card.dataset.category;
-        const imageSrc = card.querySelector("img").src;
-
-        modalImage.src = imageSrc;
-        modalTitle.textContent = title;
-        modalAuthor.textContent = `by ${author}`;
-        modalCategory.textContent = `Category: ${category}`;
-
-        modal.style.display = "flex";
-    });
-});
-
-closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-// Also close if user clicks the dark overlay outside the box
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-});
-
-// PAGINATION
+// ===== PAGINATION =====
 const booksPerPage = 4;
 const allBookCards = document.querySelectorAll(".book-card");
 const pageLinks = document.querySelectorAll(".page-link");
@@ -127,7 +138,6 @@ function showPage(page) {
         card.style.display = (index >= start && index < end) ? "block" : "none";
     });
 
-    // Highlight the active page number
     pageLinks.forEach((link) => {
         link.classList.toggle("active", Number(link.dataset.page) === page);
     });
@@ -154,5 +164,4 @@ nextPageBtn.addEventListener("click", (e) => {
     }
 });
 
-// Show page 1 by default when the page loads
 showPage(1);

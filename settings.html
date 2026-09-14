@@ -112,6 +112,8 @@ body {
 
 .profile-card img {
   width: 100px;
+  height: 100px;
+  object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--primary);
   margin-bottom: 15px;
@@ -206,7 +208,24 @@ a:hover {
 .sidebar a:hover {
   color: var(--primary);
 }    
-    
+
+.borrowed-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.return-btn {
+    background: #ef4444;
+    padding: 6px 12px;
+    font-size: 0.85em;
+}
+
+.return-btn:hover {
+    background: #dc2626;
+}
 
 </style>
 </head>
@@ -216,7 +235,7 @@ a:hover {
 <!-- HEADER -->
 <div class="header">
   <h2>Dashboard</h2>
-  <p id="headerName">Loading...</p>
+  <p id="headerName" style="margin: 0;font-weight: 500;font-size: 1.1em;color: var(--text);">Loading...</p>
 </div>
 
 <div class="container">
@@ -224,9 +243,10 @@ a:hover {
   <!-- SIDEBAR -->
   <div class="sidebar">
     <ul>
-        <li><a href="#">Overview</a></li>
+        <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Overview</a></li>
         <li><a href="profile.html">Profile</a></li>
-        <li><a href="edit-profile.html">Edit Profile</a></li>
+        <li><a href="EditProfile.html">Edit Profile</a></li>
+        <li><a href="change-password.html">Change Password</a></li>
         <li><a href="#" id="logoutLink">Logout</a></li>
         <li><a href="index.html">Home</a></li>
     </ul>
@@ -239,7 +259,7 @@ a:hover {
 
       <!-- PROFILE CARD -->
       <div class="card profile-card">
-        <img src="assets/images/profile.jpg" alt="User profile picture">
+        <img src="assets/images/profile.jpg" id="dashboardAvatar">
         <h3 id="profileCardName">Loading...</h3>
         <p>Library Member</p>
         <a href="profile.html" class="btn">Back to Profile</a>
@@ -251,6 +271,12 @@ a:hover {
         <div class="card">
           <h2>Personal Info</h2>
           <p>Email: <span id="dashboardEmail">Loading...</span></p>
+          <p>Member Since: <span id="dashboardJoined">Loading...</span></p>
+        </div>
+
+        <div class="card">
+          <h2>Quick Stats</h2>
+          <p>Books Borrowed: <span id="statsTotalBorrowed">0</span></p>
         </div>
 
         <div class="card">
